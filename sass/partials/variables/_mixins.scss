@@ -1,0 +1,23 @@
+/* This is setting flex vertically and holizontally centered. Using this set of code several times. And it's something I might often use in other pages as well. Passing direction as argument, so I can use it for both of column case and row case */
+@mixin flexCenter($direction) {
+    display: flex;
+    flex-direction: $direction;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* This is setting 1 column layout with the set of the number of the items. I have this layout in small and large views. I might change the number of the item, so passing it as argument */
+@mixin gridColumn($itemNo){
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat($itemNo, 1fr);
+}
+
+/* This is setting 2 by 2 grid. I have this layout in medium and x-large views */
+@mixin grid2by2(){
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+}
+

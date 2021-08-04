@@ -1,0 +1,97 @@
+/*
+Theme Name: Megumi Portfolio 
+Author: Megumi Takashima
+Description: Theme for Final Projext: Portfolio
+Version: 0.1
+Requires at least: 5.0
+Tested up to: 5.4
+Requires PHP: 7.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: megumiportfolio
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
+*/
+
+
+
+/*
+Table of Contents
+0. Variables
+1. Reset
+2. Typography
+3. Navigation
+4. Posts and Pages (home/archive/search)
+5. Media
+6. Accesibility
+7. Header
+8. Footer
+9. Other Elements
+10. Front Page
+11. Featured Page
+12. About Page
+13. Single Page
+14. 404 Page
+*/
+
+
+/* 0. Variables ============================== */
+@import "partials/variables/variables";
+
+
+/* 1. Reset ================================== */
+@import "partials/reset";
+
+
+/* 2. Typography ============================= */
+@import "partials/typography";
+
+
+/* 3. Navigation ============================= */
+@import "partials/navigation";
+
+
+/* 4. Posts and Pages (home/archive/search) == */
+@import "partials/posts-pages";
+
+
+/* 5. Media ================================== */
+@import "partials/media";
+
+
+/* 6. Accesibility =========================== */
+@import "partials/accessibility";
+
+
+/* 7. Header =============================== */
+@import "partials/header";
+
+
+/* 8. Footer =============================== */
+@import "partials/footer";
+
+
+/* 9. Other Elements =============================== */
+@import "partials/elements";
+
+
+/* 10. Front Page ================================= */
+@import "partials/front-page";
+
+
+/* 11. About Page ================================= */
+@import "partials/about-page";
+
+
+/* 12. Featured Page ================================= */
+@import "partials/featured-page";
+
+
+/* 13. Single Page ================================= */
+@import "partials/single-page";
+
+
+/* 14. 404 Page ================================= */
+@import "partials/404-page";
+
+

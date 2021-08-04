@@ -1,0 +1,185 @@
+body.page-front {
+    // preset
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: $default-bg;
+    
+
+    main {
+        @include flexCenter(column);
+        width: 100%;
+
+        .wp-block-group, .wp-block-group__inner-container, .wp-block-cover {
+            width: 100%;
+        }
+
+        //for title and eyeglasses
+        .wp-block-group:first-child {
+
+            .wp-block-group__inner-container {
+                @include flexCenter(column);
+                height: 100vh;
+
+                h1 {
+                    font-size: 40px;
+                    animation: color-change 1s linear;
+                    animation-iteration-count: infinite;
+                }
+        
+                .wp-block-image {
+                    width: 40%;
+                    text-align: center;
+
+                    img {
+                        width: 100%;
+                    }
+                }
+
+                @keyframes color-change {
+                    0% {
+                        color: $default-color;
+                    }
+                
+                    20% {
+                        color: $accent-blue;
+                    }
+                
+                    35% {
+                        color: $default-color;
+                    }
+                
+                    40% {
+                        color: $accent-blue;
+                    }
+                
+                    60% {
+                        color: $accent-blue;
+                    }
+                
+                    100% {
+                        color: $default-color;
+                    }
+                }
+            }
+
+        }
+
+        
+        //for link part to each page
+        .wp-block-group:nth-child(2) .wp-block-group__inner-container {
+            display: grid;
+            grid-template-rows: repeat(3, 1fr);
+            height: 100vh;
+
+            .wp-block-cover {
+                padding: 0;
+                min-height: initial;
+                height: calc(100vh / 3);
+
+                img {
+                    height: 100%;
+                }
+
+                .wp-block-cover__inner-container {
+                    width: 100%;
+                    height: 100%;
+                    transition: all 0.5s linear;
+
+                    p {
+                        height: 100%;
+                        margin: 0;
+
+                        a {
+                            display: block;
+                            color: $default-color;
+                            font-family: $font-headings;
+                            margin: 0;
+                            height: 100%;
+                            @include flexCenter(column);
+                            font-size: 0;
+                            transition: all 0.5s linear;
+                        }
+                    }
+                }
+
+                .wp-block-cover__inner-container:hover {
+                    background-color: $accent-blue;
+                }
+
+                .wp-block-cover__inner-container a:hover {
+                    font-size: 40px;
+
+                }
+            }
+        }
+
+
+
+
+        /********************************/
+        /* Medium Screen */
+        /********************************/
+        @media screen and (min-width: $medium) {
+            .wp-block-group:first-child .wp-block-group__inner-container {
+                height: calc(100vh / 3);
+            }
+
+            .wp-block-group:nth-child(2) .wp-block-group__inner-container {
+                @include grid2by2();
+                height: calc(100vh / 3 * 2);
+
+                .wp-block-cover:first-child {
+                    grid-column: span 2;
+                }
+            }
+        }
+
+        /********************************/
+        /* Large Screen */
+        /********************************/
+        @media screen and (min-width: $large) {
+            @include flexCenter(row);
+
+            .wp-block-group:first-child .wp-block-group__inner-container h1 {
+                font-size: 50px; 
+            }
+
+            .wp-block-group:nth-child(2) .wp-block-group__inner-container {
+                @include gridColumn(3);
+                height: 100vh;
+                
+                .wp-block-cover {
+                    height: 100%;    
+                }
+
+                .wp-block-cover:first-child {
+                    grid-column: span 1;
+                }
+
+                .has-text-align-center p a:hover {
+                    font-size: 50px; 
+                }
+            }  
+        }
+
+        /********************************/
+        /* X-Large Screen */
+        /********************************/
+        @media screen and (min-width: $x-large) {
+            .wp-block-group:nth-child(2) .wp-block-group__inner-container {
+                @include grid2by2();
+
+                .wp-block-cover {
+                    height: calc(100vh / 2);    
+                }
+
+                .wp-block-cover:first-child {
+                    grid-column: span 2;
+                }
+            }
+        }
+    }
+}
+
+

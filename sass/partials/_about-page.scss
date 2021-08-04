@@ -1,0 +1,85 @@
+body.page-about {
+    // preset
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: $default-bg;
+
+    main {
+        padding: 1rem 2rem;
+
+        p {
+            color: $default-color;
+        }
+
+        .wp-block-group {
+            margin: 5rem 0;
+        }
+
+        .wp-block-group:nth-of-type(4) .wp-block-group__inner-container .wp-block-group {
+            margin: 0;
+        }
+
+        p::before {
+            font-family: "Font Awesome 5 Free";
+            display: inline-block;
+            font-style: normal;
+            font-variant: normal;
+            text-rendering: auto;
+            -webkit-font-smoothing: antialiased;
+            margin-right: 0.5rem;
+            color: $accent-blue;
+        }
+
+        .wp-block-group:nth-of-type(2),
+        .wp-block-group:nth-of-type(3),
+        .wp-block-group:nth-of-type(4) .wp-block-group:first-of-type {
+            p:first-of-type::before {
+                content: "\f017";
+            }
+
+            p:nth-of-type(2)::before {
+                content: "\f1ad";
+            }
+
+            p:nth-of-type(3)::before,
+            p:nth-of-type(4)::before {
+                content: "\f14a";
+            }
+        }
+
+        .wp-block-group:nth-of-type(4) .wp-block-group__inner-container .wp-block-group {
+            padding: 0.5rem 0;
+            border-bottom: 1px dashed $text-hover;
+        }
+
+        .wp-block-group:nth-of-type(4) .wp-block-group__inner-container .wp-block-group:first-of-type {
+            padding-top: 0;
+        }
+
+
+        @media screen and (min-width: $medium) {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+
+        @media screen and (min-width: $large) {
+            max-width: 900px;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-gap: 3rem;
+
+            .wp-block-group {
+                margin: 0;
+            }
+
+            .wp-block-group:first-of-type {
+                grid-column: span 2;
+            }
+
+        }
+    
+    }
+
+}

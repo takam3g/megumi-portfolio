@@ -1,0 +1,124 @@
+body.blog,
+body.archive,
+body.search,
+body.page-featured {
+    // preset
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: $default-bg;
+
+    //main setup
+    main {
+        padding: 1rem;
+        margin: 0 auto;
+
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-row-gap: 1rem;
+
+
+        article {
+            background-color: $card-bg;
+            border-radius: 2rem;
+            padding: 1rem;
+            
+            .entry-category, 
+            .entry-category a,
+            .entry-content p {
+                color: $default-color;
+            }
+
+            .entry-content {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                height: 300px;
+            }
+
+            img {
+                border-radius: 1.5rem;
+                margin-bottom: 0;
+                height: 200px;
+                
+            }
+        }
+
+        .posts-navigation {
+            margin-top: 3rem; 
+
+            .nav-links {
+                display: flex;
+                justify-content: space-between;
+
+                a {
+                    color: $default-color;
+                }
+            }
+        }
+
+
+
+        // Media Query
+        @media screen and (min-width: $medium){
+            grid-template-columns: repeat(2, 1fr);
+            grid-column-gap: 1rem;
+
+            .posts-navigation {
+                grid-column: span 2;
+            }
+        }
+
+        @media screen and (min-width: $large){
+            grid-template-columns: repeat(3, 1fr);
+
+            .posts-navigation {
+                grid-column: span 3;
+            }
+            
+        }
+
+        @media screen and (min-width: $x-large){
+            grid-template-columns: repeat(4, 1fr);
+
+            .posts-navigation {
+                grid-column: span 4;
+            }
+        }
+
+    }
+
+}
+
+body.page-featured main {
+    
+    margin: 3rem 0;
+
+    @media screen and (min-width: $x-large){
+        grid-template-columns: repeat(3, 1fr);
+        justify-content: center;
+    }
+    
+}
+
+
+body.archive,
+body.search {
+    h2.search-archive-title {
+        text-align: center;
+
+        @media screen and (min-width: $medium){
+            grid-column: span 2;
+        }
+
+        @media screen and (min-width: $large){
+            grid-column: span 3;
+            
+        }
+
+        @media screen and (min-width: $x-large){
+            grid-column: span 4;
+        }
+        
+    }
+}

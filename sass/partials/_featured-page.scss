@@ -1,0 +1,10 @@
+body.page-featured {
+    // preset
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: $default-bg;
+}
+
+//Styling from posts-pages.scss 
+//If I can go with this setup, I can delete this featured-page.scss already

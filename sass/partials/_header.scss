@@ -1,0 +1,311 @@
+.site-header {
+
+    // preset
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: $overlay-black2;
+    color: $default-color;
+    position: sticky;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 100;
+
+    // set flex to separately control header upper and lower
+    display: flex;
+    flex-direction: column;
+
+    
+    .header-upper {
+
+        height: 90px;
+        display: grid;
+        grid-template-columns: 20% 60% 20%;
+        padding: 0 1rem;
+        align-items: center;
+        border-bottom: 1px solid $default-color;
+        
+
+        .custom-logo-link {
+            width: 50px;
+            
+            img {
+                color: $default-color
+            }
+        }
+    
+
+        h1 {
+            margin: 0; 
+            justify-self: center;
+
+            .site-title {
+                font-size: $font-heading-small; 
+            }
+        }
+
+        
+        .main-menu-wrapper {
+            @include flexCenter(row);
+            justify-self: end;
+
+            .fa-bars {
+                display: block;
+                padding: 0.3rem 0.5rem;
+                border: 1px solid $default-color;
+                border-radius: 0.5rem;
+                font-size: $font-default-small;
+            }
+
+            .fa-bars:hover {
+                background-color: $default-color;
+                color: $default-bg;
+            }
+
+            .main-menu {
+                display: none;
+                align-items: center;
+                justify-content: flex-end;
+                
+            
+                li {
+                    @include flexCenter(row);
+                    padding: 0.3rem 0.5rem;
+                    border: 1px solid $default-color;
+                    border-radius: 0.5rem;
+                    margin: 0 0.3rem;
+                    
+                
+                    a {
+                        width: 100%;
+                        height: 100%;
+                        text-align: center;
+                        color: $default-color;
+                    }
+
+                    a::before { 
+                        font-family: "Font Awesome 5 Free";
+                        display: inline-block;
+                        font-style: normal;
+                        font-variant: normal;
+                        text-rendering: auto;
+                        -webkit-font-smoothing: antialiased;
+                        color: $default-color;
+                        font-size: 22px;
+                    }
+
+                    span {
+                        color: $default-color;
+                        font-size: 0;
+                    }
+                }
+
+                li:last-child {
+                    margin-right: 0;
+                }
+
+                li:first-child a::before {
+                    content: "\f07c";
+                }
+
+                li:nth-child(2) a::before {
+                    content: "\f005";
+                }
+
+                li:last-child a::before {
+                    content: "\f2bb";
+                }
+
+                li:hover {
+                    background-color: $default-color;
+                    
+                    a::before, span {
+                        color: $default-bg;
+                    }
+                }       
+            }
+        }
+    }
+
+    .main-menu-slide {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        background-color: $accent-blue;  //To change bg-color of current page, see the bottom of this page
+        @include flexCenter(column);
+        justify-self: center;
+
+        position: sticky;
+        top: 90px;
+        right: 0;
+        left: 0;
+        z-index: 1000;
+
+        
+        li {
+            padding: 0;
+            text-align: center;
+            width: 100%;
+            height: 60px;
+            line-height: 60px;
+            transition: all 0.5s linear;
+
+            a {
+                @include flexCenter(row);
+                width: 100%;
+                height: 100%;;
+
+                span {
+                    display: inline-block;
+                    width: 100%;
+                    height: 100%;
+                    color: $default-color;
+                    font-size: $font-default-small;
+                    transition: all 0.5s linear;
+                }
+            }
+        }
+
+        li:hover a span {
+            font-size: $font-default-medium;
+            font-weight: bold;
+        }
+    }
+
+
+    .main-menu-slide.close {
+        li {
+            height: 0;
+        }
+
+        span {
+            font-size: 0;
+        }
+    }
+
+    .header-lower {
+        margin: 1rem 0;
+        @include flexCenter(column);
+
+        .category-menu {
+            display: flex;
+            justify-content: space-between;
+
+            li {
+                margin: 0 0.5rem;
+                border: 1px solid $default-color;
+                padding: 0.2rem 1rem;
+                border-radius: 5rem;
+
+                a {
+                    color: $default-color;
+                }
+            }
+
+            li:hover {
+                background-color: $default-color;
+
+                a {
+                    color: $default-bg;
+                }
+            }
+        }
+
+        .searchform {
+            padding: 0.5rem;
+            margin: 0.5rem 0;
+
+            input {
+                padding: 0.2rem 0.5rem;
+                border-radius: 5rem;
+                font-size: $font-default-small;
+                color: $default-bg;
+            }
+        }
+    }
+
+
+    // Media Query
+    @media screen and (min-width: $medium){
+
+        .header-upper {
+
+            h1 .site-title {
+                font-size: $font-heading-medium; 
+            }
+
+            .main-menu-wrapper {
+
+                .fa-bars {
+                    display: none;
+                }
+
+                .main-menu {
+                    display: flex;
+                }
+            }
+        }
+
+        .main-menu-slide {
+            display: none;
+        }
+
+        .header-lower {
+            flex-direction: row;
+        }
+        
+    }
+
+    @media screen and (min-width: $large){
+        .header-upper {
+
+            h1 .site-title {
+                font-size: $font-heading-large; 
+            }
+
+            .main-menu-wrapper .main-menu li {
+               
+                border: none;
+                border-bottom-right-radius: 0;
+                border-bottom-left-radius: 0;
+
+                a::before {
+                    font-size: 0;
+                }
+
+                span {
+                    font-size: $font-default-small;
+                    color: $default-color;
+                }
+            }
+        }
+    }
+}
+
+
+//Change the bg-color of slidein menu of current page
+body.blog .site-header .main-menu-slide li:first-child,
+body.page-featured .site-header .main-menu-slide li:nth-child(2),
+body.page-about .site-header .main-menu-slide li:last-child {
+    background-color: $accent-blue2;
+}
+
+//Change the bg-color of main menu of current page
+body.blog .site-header .main-menu li:first-child,
+body.page-featured .site-header .main-menu li:nth-child(2),
+body.page-about .site-header .main-menu li:last-child {
+    background-color: $default-color;
+
+    @media screen and (min-width: $large){
+        background-color: transparent;
+        border-bottom: 2px solid $default-color;
+    }
+}
+
+//Change color of main menu of current page
+body.blog .site-header .main-menu li:first-child a::before,
+body.page-featured .site-header .main-menu li:nth-child(2) a::before,
+body.page-about .site-header .main-menu li:last-child a::before {
+    color: $default-bg;
+}

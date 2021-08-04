@@ -1,0 +1,30 @@
+
+.search_archive_heading {
+    text-align: center;
+    margin: 2em 0;
+}
+
+
+.error-404 {
+    text-align: center;
+    padding: 2em 0;
+}
+
+
+.search .error-404 {
+    @media screen and (min-width: $medium){
+        grid-column: 2 span;
+    }
+
+    @media screen and (min-width: $large){
+        grid-column: 3 span;
+    }
+
+    @media screen and (min-width: $x-large){
+        grid-column: 4 span;
+    }
+}
+
+
+
+

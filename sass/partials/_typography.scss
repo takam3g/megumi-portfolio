@@ -1,0 +1,16 @@
+* {
+    font-family: $font_default;
+    color: $default-color;
+}
+
+h1, h2, h3, h4, h5, h6,
+h1 a, h2 a, h2 > span {
+    font-family: $font_headings;
+    color: $accent-blue;
+}
+
+
+i {
+    color: $default-color;
+}
+

@@ -1,0 +1,105 @@
+.site-footer {
+    margin-top: 2rem;
+    border-top: 1px solid $default-color;
+    background-color: $default-bg;
+
+    .footer-wrapper {
+        width: 300px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: space-between;
+        padding: 1rem 0;
+        margin: 0 auto;
+
+
+        ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .attribute {
+            p, li {
+                color: $default-color;
+            }
+
+            a {
+                color: $accent-blue;
+            }
+        }
+
+        .sns {
+
+            p {
+                color: $default-color;
+            }
+            
+            .social-menu {
+            display: flex;
+            align-items: flex-start;
+
+                li {
+                    margin-right: 1rem;
+                    
+                    a::before {
+                        display: inline-block;
+                        font-style: normal;
+                        font-variant: normal;
+                        text-rendering: auto;
+                        -webkit-font-smoothing: antialiased;
+                        font-family: "Font Awesome 5 Brands";
+                        font-size: $font-heading-small;
+                        color: $default-color;
+                    }
+                }
+            }
+        }
+
+        .social-menu a[href^="https://www.linkedin.com"]:before {
+            content: "\f08c";
+        }
+
+        .social-menu a[href^="https://github.com/"]:before {
+            content: "\f09b"
+        }
+
+
+        // Media Query
+        @media screen and (min-width: $medium){
+            width: 80%;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+
+            .attribute {
+                p, li, a {
+                    font-size: $font-default-small;
+                }
+            }
+
+            .sns {
+
+                p {
+                    font-size: $font-default-small;
+                }
+
+                .social-menu li a::before {
+                    font-size: $font-heading-small;
+                } 
+
+            }
+        }
+
+        @media screen and (min-width: $x-large){
+
+            .sns {
+                @include flexCenter(row);
+
+                p {
+                    margin-right: 1rem;
+                }
+
+            }
+        }
+    }
+}

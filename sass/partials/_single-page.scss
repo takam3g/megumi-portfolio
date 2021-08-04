@@ -1,0 +1,106 @@
+body.single {
+    // preset
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: $default-bg;
+
+    header .header-lower {
+        display: none;
+    }
+
+    main {
+        padding: 2rem;
+        max-width: 600px;
+        margin: 0 auto;
+
+        article {
+
+
+            p, figcaption, span {
+                color: $default-color;
+            }
+
+            a {
+                word-wrap: break-word;
+            }
+
+            .entry-title {
+                margin-bottom: 3rem;
+                text-align: center;
+                font-size: $font-heading-medium;
+            }
+
+            .entry-content {
+                margin-bottom: 3rem;
+
+                .wp-block-group {
+                    margin: 3rem 0;
+            
+                    h3 {
+                        font-size: $font-heading-small;
+                    }
+
+                    .wp-block-image {
+                        display: flex;
+                        flex-direction: column-reverse;
+                        align-items: center;
+                    }
+                    
+                }
+            }
+
+            .entry-category, .entry-tag {
+                margin: 0.5rem 0;
+            }
+
+            .fa-folder::before, .fa-tag::before {
+                color: $accent-blue;
+                margin-right: 0.5rem;
+            }
+        }
+
+        .post-navigation {
+            margin-top: 3rem; 
+
+            .nav-links {
+                display: flex;
+                justify-content: space-between;
+            }
+        }
+
+
+        @media screen and (min-width: $large){
+
+            max-width: 800px;
+
+            article .entry-content {
+
+                display: grid;
+                grid-template-columns: 50% 50%;
+                grid-column-gap: 2rem;
+
+                .wp-block-group {
+                    margin: 0;
+                }
+
+                .wp-block-group:first-child, 
+                .wp-block-group:nth-child(2) {
+                    grid-column: span 2;
+                }
+
+                .wp-block-group:nth-child(2) .wp-block-group__inner-container .wp-block-group .wp-block-group__inner-container {
+                    display: grid;
+                    grid-template-columns: 40% 56%;
+                    grid-column-gap: 2rem;
+                    align-items: start;                
+                }
+            }
+        }
+
+        @media screen and (min-width: $x-large){
+
+            max-width: 1200px;
+        }
+    }
+}

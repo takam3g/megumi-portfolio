@@ -1,0 +1,1430 @@
+/*
+Theme Name: Megumi Portfolio 
+Author: Megumi Takashima
+Description: Theme for Final Projext: Portfolio
+Version: 0.1
+Requires at least: 5.0
+Tested up to: 5.4
+Requires PHP: 7.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: megumiportfolio
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
+*/
+/*
+Table of Contents
+0. Variables
+1. Reset
+2. Typography
+3. Navigation
+4. Posts and Pages (home/archive/search)
+5. Media
+6. Accesibility
+7. Header
+8. Footer
+9. Other Elements
+10. Front Page
+11. Featured Page
+12. About Page
+13. Single Page
+14. 404 Page
+*/
+/* 0. Variables ============================== */
+/* This is setting flex vertically and holizontally centered. Using this set of code several times. And it's something I might often use in other pages as well. Passing direction as argument, so I can use it for both of column case and row case */
+/* This is setting 1 column layout with the set of the number of the items. I have this layout in small and large views. I might change the number of the item, so passing it as argument */
+/* This is setting 2 by 2 grid. I have this layout in medium and x-large views */
+/* 1. Reset ================================== */
+/*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
+/* Document
+   ========================================================================== */
+/**
+ * 1. Correct the line height in all browsers.
+ * 2. Prevent adjustments of font size after orientation changes in iOS.
+ */
+html {
+  line-height: 1.15;
+  /* 1 */
+  -webkit-text-size-adjust: 100%;
+  /* 2 */
+  margin-top: 0;
+}
+
+/* Sections
+    ========================================================================== */
+/**
+  * Remove the margin and padding, and set border-box in all browsers.
+  */
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/**
+  * Render the `main` element consistently in IE.
+  */
+main {
+  display: block;
+}
+
+/**
+  * Correct the font size and margin on `h1` elements within `section` and
+  * `article` contexts in Chrome, Firefox, and Safari.
+  */
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+
+/* Grouping content
+    ========================================================================== */
+/**
+  * 1. Add the correct box sizing in Firefox.
+  * 2. Show the overflow in Edge and IE.
+  */
+hr {
+  box-sizing: content-box;
+  /* 1 */
+  height: 0;
+  /* 1 */
+  overflow: visible;
+  /* 2 */
+}
+
+/**
+  * 1. Correct the inheritance and scaling of font size in all browsers.
+  * 2. Correct the odd `em` font sizing in all browsers.
+  */
+pre {
+  font-family: monospace, monospace;
+  /* 1 */
+  font-size: 1em;
+  /* 2 */
+}
+
+/* Text-level semantics
+    ========================================================================== */
+/**
+  * Remove the gray background on active links in IE 10.
+  */
+a {
+  background-color: transparent;
+}
+
+/**
+  * 1. Remove the bottom border in Chrome 57-
+  * 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.
+  */
+abbr[title] {
+  border-bottom: none;
+  /* 1 */
+  text-decoration: underline;
+  /* 2 */
+  text-decoration: underline dotted;
+  /* 2 */
+}
+
+/**
+  * Add the correct font weight in Chrome, Edge, and Safari.
+  */
+b,
+strong {
+  font-weight: bolder;
+}
+
+/**
+  * 1. Correct the inheritance and scaling of font size in all browsers.
+  * 2. Correct the odd `em` font sizing in all browsers.
+  */
+code,
+kbd,
+samp {
+  font-family: monospace, monospace;
+  /* 1 */
+  font-size: 1em;
+  /* 2 */
+}
+
+/**
+  * Add the correct font size in all browsers.
+  */
+small {
+  font-size: 80%;
+}
+
+/**
+  * Prevent `sub` and `sup` elements from affecting the line height in
+  * all browsers.
+  */
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+sup {
+  top: -0.5em;
+}
+
+/* Embedded content
+    ========================================================================== */
+/**
+  * Remove the border on images inside links in IE 10.
+  */
+img {
+  border-style: none;
+}
+
+/* Forms
+    ========================================================================== */
+/**
+  * 1. Change the font styles in all browsers.
+  * 2. Remove the margin in Firefox and Safari.
+  */
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: inherit;
+  /* 1 */
+  font-size: 100%;
+  /* 1 */
+  line-height: 1.15;
+  /* 1 */
+  margin: 0;
+  /* 2 */
+}
+
+/**
+  * Show the overflow in IE.
+  * 1. Show the overflow in Edge.
+  */
+button,
+input {
+  /* 1 */
+  overflow: visible;
+}
+
+/**
+  * Remove the inheritance of text transform in Edge, Firefox, and IE.
+  * 1. Remove the inheritance of text transform in Firefox.
+  */
+button,
+select {
+  /* 1 */
+  text-transform: none;
+}
+
+/**
+  * Correct the inability to style clickable types in iOS and Safari.
+  */
+button,
+[type="button"],
+[type="reset"],
+[type="submit"] {
+  -webkit-appearance: button;
+}
+
+/**
+  * Remove the inner border and padding in Firefox.
+  */
+button::-moz-focus-inner,
+[type="button"]::-moz-focus-inner,
+[type="reset"]::-moz-focus-inner,
+[type="submit"]::-moz-focus-inner {
+  border-style: none;
+  padding: 0;
+}
+
+/**
+  * Restore the focus styles unset by the previous rule.
+  */
+button:-moz-focusring,
+[type="button"]:-moz-focusring,
+[type="reset"]:-moz-focusring,
+[type="submit"]:-moz-focusring {
+  outline: 1px dotted ButtonText;
+}
+
+/**
+  * Correct the padding in Firefox.
+  */
+fieldset {
+  padding: 0.35em 0.75em 0.625em;
+}
+
+/**
+  * 1. Correct the text wrapping in Edge and IE.
+  * 2. Correct the color inheritance from `fieldset` elements in IE.
+  * 3. Remove the padding so developers are not caught out when they zero out
+  *    `fieldset` elements in all browsers.
+  */
+legend {
+  box-sizing: border-box;
+  /* 1 */
+  color: inherit;
+  /* 2 */
+  display: table;
+  /* 1 */
+  max-width: 100%;
+  /* 1 */
+  padding: 0;
+  /* 3 */
+  white-space: normal;
+  /* 1 */
+}
+
+/**
+  * Add the correct vertical alignment in Chrome, Firefox, and Opera.
+  */
+progress {
+  vertical-align: baseline;
+}
+
+/**
+  * Remove the default vertical scrollbar in IE 10+.
+  */
+textarea {
+  overflow: auto;
+}
+
+/**
+  * 1. Add the correct box sizing in IE 10.
+  * 2. Remove the padding in IE 10.
+  */
+[type="checkbox"],
+[type="radio"] {
+  box-sizing: border-box;
+  /* 1 */
+  padding: 0;
+  /* 2 */
+}
+
+/**
+  * Correct the cursor style of increment and decrement buttons in Chrome.
+  */
+[type="number"]::-webkit-inner-spin-button,
+[type="number"]::-webkit-outer-spin-button {
+  height: auto;
+}
+
+/**
+  * 1. Correct the odd appearance in Chrome and Safari.
+  * 2. Correct the outline style in Safari.
+  */
+[type="search"] {
+  -webkit-appearance: textfield;
+  /* 1 */
+  outline-offset: -2px;
+  /* 2 */
+}
+
+/**
+  * Remove the inner padding in Chrome and Safari on macOS.
+  */
+[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+/**
+  * 1. Correct the inability to style clickable types in iOS and Safari.
+  * 2. Change font properties to `inherit` in Safari.
+  */
+::-webkit-file-upload-button {
+  -webkit-appearance: button;
+  /* 1 */
+  font: inherit;
+  /* 2 */
+}
+
+/* Interactive
+    ========================================================================== */
+/*
+  * Add the correct display in Edge, IE 10+, and Firefox.
+  */
+details {
+  display: block;
+}
+
+/*
+  * Add the correct display in all browsers.
+  */
+summary {
+  display: list-item;
+}
+
+/* Misc
+    ========================================================================== */
+/**
+  * Add the correct display in IE 10+.
+  */
+template {
+  display: none;
+}
+
+/**
+  * Add the correct display in IE 10.
+  */
+[hidden] {
+  display: none;
+}
+
+/* 2. Typography ============================= */
+* {
+  font-family: Arial, Helvetica, sans-serif;
+  color: white;
+}
+
+h1, h2, h3, h4, h5, h6,
+h1 a, h2 a, h2 > span {
+  font-family: "Kalam", cursive;
+  color: rgba(40, 200, 245, 0.8);
+}
+
+i {
+  color: white;
+}
+
+/* 3. Navigation ============================= */
+a {
+  text-decoration: none;
+  color: white;
+}
+
+a:hover {
+  color: gray;
+}
+
+nav ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+/* 4. Posts and Pages (home/archive/search) == */
+body.blog,
+body.archive,
+body.search,
+body.page-featured {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: black;
+}
+
+body.blog main,
+body.archive main,
+body.search main,
+body.page-featured main {
+  padding: 1rem;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-row-gap: 1rem;
+}
+
+body.blog main article,
+body.archive main article,
+body.search main article,
+body.page-featured main article {
+  background-color: rgba(128, 128, 128, 0.2);
+  border-radius: 2rem;
+  padding: 1rem;
+}
+
+body.blog main article .entry-category,
+body.blog main article .entry-category a,
+body.blog main article .entry-content p,
+body.archive main article .entry-category,
+body.archive main article .entry-category a,
+body.archive main article .entry-content p,
+body.search main article .entry-category,
+body.search main article .entry-category a,
+body.search main article .entry-content p,
+body.page-featured main article .entry-category,
+body.page-featured main article .entry-category a,
+body.page-featured main article .entry-content p {
+  color: white;
+}
+
+body.blog main article .entry-content,
+body.archive main article .entry-content,
+body.search main article .entry-content,
+body.page-featured main article .entry-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 300px;
+}
+
+body.blog main article img,
+body.archive main article img,
+body.search main article img,
+body.page-featured main article img {
+  border-radius: 1.5rem;
+  margin-bottom: 0;
+  height: 200px;
+}
+
+body.blog main .posts-navigation,
+body.archive main .posts-navigation,
+body.search main .posts-navigation,
+body.page-featured main .posts-navigation {
+  margin-top: 3rem;
+}
+
+body.blog main .posts-navigation .nav-links,
+body.archive main .posts-navigation .nav-links,
+body.search main .posts-navigation .nav-links,
+body.page-featured main .posts-navigation .nav-links {
+  display: flex;
+  justify-content: space-between;
+}
+
+body.blog main .posts-navigation .nav-links a,
+body.archive main .posts-navigation .nav-links a,
+body.search main .posts-navigation .nav-links a,
+body.page-featured main .posts-navigation .nav-links a {
+  color: white;
+}
+
+@media screen and (min-width: 700px) {
+  body.blog main,
+  body.archive main,
+  body.search main,
+  body.page-featured main {
+    grid-template-columns: repeat(2, 1fr);
+    grid-column-gap: 1rem;
+  }
+  body.blog main .posts-navigation,
+  body.archive main .posts-navigation,
+  body.search main .posts-navigation,
+  body.page-featured main .posts-navigation {
+    grid-column: span 2;
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  body.blog main,
+  body.archive main,
+  body.search main,
+  body.page-featured main {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  body.blog main .posts-navigation,
+  body.archive main .posts-navigation,
+  body.search main .posts-navigation,
+  body.page-featured main .posts-navigation {
+    grid-column: span 3;
+  }
+}
+
+@media screen and (min-width: 1400px) {
+  body.blog main,
+  body.archive main,
+  body.search main,
+  body.page-featured main {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  body.blog main .posts-navigation,
+  body.archive main .posts-navigation,
+  body.search main .posts-navigation,
+  body.page-featured main .posts-navigation {
+    grid-column: span 4;
+  }
+}
+
+body.page-featured main {
+  margin: 3rem 0;
+}
+
+@media screen and (min-width: 1400px) {
+  body.page-featured main {
+    grid-template-columns: repeat(3, 1fr);
+    justify-content: center;
+  }
+}
+
+body.archive h2.search-archive-title,
+body.search h2.search-archive-title {
+  text-align: center;
+}
+
+@media screen and (min-width: 700px) {
+  body.archive h2.search-archive-title,
+  body.search h2.search-archive-title {
+    grid-column: span 2;
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  body.archive h2.search-archive-title,
+  body.search h2.search-archive-title {
+    grid-column: span 3;
+  }
+}
+
+@media screen and (min-width: 1400px) {
+  body.archive h2.search-archive-title,
+  body.search h2.search-archive-title {
+    grid-column: span 4;
+  }
+}
+
+/* 5. Media ================================== */
+img {
+  max-width: 100%;
+  height: auto;
+  object-fit: cover;
+  min-height: none;
+}
+
+/* 6. Accesibility =========================== */
+.screen-reader-text {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+/* 7. Header =============================== */
+.site-header {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: rgba(0, 0, 0, 0.9);
+  color: white;
+  position: sticky;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+}
+
+.site-header .header-upper {
+  height: 90px;
+  display: grid;
+  grid-template-columns: 20% 60% 20%;
+  padding: 0 1rem;
+  align-items: center;
+  border-bottom: 1px solid white;
+}
+
+.site-header .header-upper .custom-logo-link {
+  width: 50px;
+}
+
+.site-header .header-upper .custom-logo-link img {
+  color: white;
+}
+
+.site-header .header-upper h1 {
+  margin: 0;
+  justify-self: center;
+}
+
+.site-header .header-upper h1 .site-title {
+  font-size: 25px;
+}
+
+.site-header .header-upper .main-menu-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  justify-self: end;
+}
+
+.site-header .header-upper .main-menu-wrapper .fa-bars {
+  display: block;
+  padding: 0.3rem 0.5rem;
+  border: 1px solid white;
+  border-radius: 0.5rem;
+  font-size: 18px;
+}
+
+.site-header .header-upper .main-menu-wrapper .fa-bars:hover {
+  background-color: white;
+  color: black;
+}
+
+.site-header .header-upper .main-menu-wrapper .main-menu {
+  display: none;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.site-header .header-upper .main-menu-wrapper .main-menu li {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 0.3rem 0.5rem;
+  border: 1px solid white;
+  border-radius: 0.5rem;
+  margin: 0 0.3rem;
+}
+
+.site-header .header-upper .main-menu-wrapper .main-menu li a {
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  color: white;
+}
+
+.site-header .header-upper .main-menu-wrapper .main-menu li a::before {
+  font-family: "Font Awesome 5 Free";
+  display: inline-block;
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  color: white;
+  font-size: 22px;
+}
+
+.site-header .header-upper .main-menu-wrapper .main-menu li span {
+  color: white;
+  font-size: 0;
+}
+
+.site-header .header-upper .main-menu-wrapper .main-menu li:last-child {
+  margin-right: 0;
+}
+
+.site-header .header-upper .main-menu-wrapper .main-menu li:first-child a::before {
+  content: "\f07c";
+}
+
+.site-header .header-upper .main-menu-wrapper .main-menu li:nth-child(2) a::before {
+  content: "\f005";
+}
+
+.site-header .header-upper .main-menu-wrapper .main-menu li:last-child a::before {
+  content: "\f2bb";
+}
+
+.site-header .header-upper .main-menu-wrapper .main-menu li:hover {
+  background-color: white;
+}
+
+.site-header .header-upper .main-menu-wrapper .main-menu li:hover a::before, .site-header .header-upper .main-menu-wrapper .main-menu li:hover span {
+  color: black;
+}
+
+.site-header .main-menu-slide {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  background-color: rgba(40, 200, 245, 0.8);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  justify-self: center;
+  position: sticky;
+  top: 90px;
+  right: 0;
+  left: 0;
+  z-index: 1000;
+}
+
+.site-header .main-menu-slide li {
+  padding: 0;
+  text-align: center;
+  width: 100%;
+  height: 60px;
+  line-height: 60px;
+  transition: all 0.5s linear;
+}
+
+.site-header .main-menu-slide li a {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.site-header .main-menu-slide li a span {
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  color: white;
+  font-size: 18px;
+  transition: all 0.5s linear;
+}
+
+.site-header .main-menu-slide li:hover a span {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.site-header .main-menu-slide.close li {
+  height: 0;
+}
+
+.site-header .main-menu-slide.close span {
+  font-size: 0;
+}
+
+.site-header .header-lower {
+  margin: 1rem 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.site-header .header-lower .category-menu {
+  display: flex;
+  justify-content: space-between;
+}
+
+.site-header .header-lower .category-menu li {
+  margin: 0 0.5rem;
+  border: 1px solid white;
+  padding: 0.2rem 1rem;
+  border-radius: 5rem;
+}
+
+.site-header .header-lower .category-menu li a {
+  color: white;
+}
+
+.site-header .header-lower .category-menu li:hover {
+  background-color: white;
+}
+
+.site-header .header-lower .category-menu li:hover a {
+  color: black;
+}
+
+.site-header .header-lower .searchform {
+  padding: 0.5rem;
+  margin: 0.5rem 0;
+}
+
+.site-header .header-lower .searchform input {
+  padding: 0.2rem 0.5rem;
+  border-radius: 5rem;
+  font-size: 18px;
+  color: black;
+}
+
+@media screen and (min-width: 700px) {
+  .site-header .header-upper h1 .site-title {
+    font-size: 30px;
+  }
+  .site-header .header-upper .main-menu-wrapper .fa-bars {
+    display: none;
+  }
+  .site-header .header-upper .main-menu-wrapper .main-menu {
+    display: flex;
+  }
+  .site-header .main-menu-slide {
+    display: none;
+  }
+  .site-header .header-lower {
+    flex-direction: row;
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  .site-header .header-upper h1 .site-title {
+    font-size: 35px;
+  }
+  .site-header .header-upper .main-menu-wrapper .main-menu li {
+    border: none;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+  .site-header .header-upper .main-menu-wrapper .main-menu li a::before {
+    font-size: 0;
+  }
+  .site-header .header-upper .main-menu-wrapper .main-menu li span {
+    font-size: 18px;
+    color: white;
+  }
+}
+
+body.blog .site-header .main-menu-slide li:first-child,
+body.page-featured .site-header .main-menu-slide li:nth-child(2),
+body.page-about .site-header .main-menu-slide li:last-child {
+  background-color: rgba(40, 200, 245, 0.7);
+}
+
+body.blog .site-header .main-menu li:first-child,
+body.page-featured .site-header .main-menu li:nth-child(2),
+body.page-about .site-header .main-menu li:last-child {
+  background-color: white;
+}
+
+@media screen and (min-width: 1000px) {
+  body.blog .site-header .main-menu li:first-child,
+  body.page-featured .site-header .main-menu li:nth-child(2),
+  body.page-about .site-header .main-menu li:last-child {
+    background-color: transparent;
+    border-bottom: 2px solid white;
+  }
+}
+
+body.blog .site-header .main-menu li:first-child a::before,
+body.page-featured .site-header .main-menu li:nth-child(2) a::before,
+body.page-about .site-header .main-menu li:last-child a::before {
+  color: black;
+}
+
+/* 8. Footer =============================== */
+.site-footer {
+  margin-top: 2rem;
+  border-top: 1px solid white;
+  background-color: black;
+}
+
+.site-footer .footer-wrapper {
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 1rem 0;
+  margin: 0 auto;
+}
+
+.site-footer .footer-wrapper ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.site-footer .footer-wrapper .attribute p, .site-footer .footer-wrapper .attribute li {
+  color: white;
+}
+
+.site-footer .footer-wrapper .attribute a {
+  color: rgba(40, 200, 245, 0.8);
+}
+
+.site-footer .footer-wrapper .sns p {
+  color: white;
+}
+
+.site-footer .footer-wrapper .sns .social-menu {
+  display: flex;
+  align-items: flex-start;
+}
+
+.site-footer .footer-wrapper .sns .social-menu li {
+  margin-right: 1rem;
+}
+
+.site-footer .footer-wrapper .sns .social-menu li a::before {
+  display: inline-block;
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  font-family: "Font Awesome 5 Brands";
+  font-size: 25px;
+  color: white;
+}
+
+.site-footer .footer-wrapper .social-menu a[href^="https://www.linkedin.com"]:before {
+  content: "\f08c";
+}
+
+.site-footer .footer-wrapper .social-menu a[href^="https://github.com/"]:before {
+  content: "\f09b";
+}
+
+@media screen and (min-width: 700px) {
+  .site-footer .footer-wrapper {
+    width: 80%;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .site-footer .footer-wrapper .attribute p, .site-footer .footer-wrapper .attribute li, .site-footer .footer-wrapper .attribute a {
+    font-size: 18px;
+  }
+  .site-footer .footer-wrapper .sns p {
+    font-size: 18px;
+  }
+  .site-footer .footer-wrapper .sns .social-menu li a::before {
+    font-size: 25px;
+  }
+}
+
+@media screen and (min-width: 1400px) {
+  .site-footer .footer-wrapper .sns {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+  .site-footer .footer-wrapper .sns p {
+    margin-right: 1rem;
+  }
+}
+
+/* 9. Other Elements =============================== */
+.search_archive_heading {
+  text-align: center;
+  margin: 2em 0;
+}
+
+.error-404 {
+  text-align: center;
+  padding: 2em 0;
+}
+
+@media screen and (min-width: 700px) {
+  .search .error-404 {
+    grid-column: 2 span;
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  .search .error-404 {
+    grid-column: 3 span;
+  }
+}
+
+@media screen and (min-width: 1400px) {
+  .search .error-404 {
+    grid-column: 4 span;
+  }
+}
+
+/* 10. Front Page ================================= */
+body.page-front {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: black;
+}
+
+body.page-front main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  /********************************/
+  /* Medium Screen */
+  /********************************/
+  /********************************/
+  /* Large Screen */
+  /********************************/
+  /********************************/
+  /* X-Large Screen */
+  /********************************/
+}
+
+body.page-front main .wp-block-group, body.page-front main .wp-block-group__inner-container, body.page-front main .wp-block-cover {
+  width: 100%;
+}
+
+body.page-front main .wp-block-group:first-child .wp-block-group__inner-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+body.page-front main .wp-block-group:first-child .wp-block-group__inner-container h1 {
+  font-size: 40px;
+  animation: color-change 1s linear;
+  animation-iteration-count: infinite;
+}
+
+body.page-front main .wp-block-group:first-child .wp-block-group__inner-container .wp-block-image {
+  width: 40%;
+  text-align: center;
+}
+
+body.page-front main .wp-block-group:first-child .wp-block-group__inner-container .wp-block-image img {
+  width: 100%;
+}
+
+@keyframes color-change {
+  0% {
+    color: white;
+  }
+  20% {
+    color: rgba(40, 200, 245, 0.8);
+  }
+  35% {
+    color: white;
+  }
+  40% {
+    color: rgba(40, 200, 245, 0.8);
+  }
+  60% {
+    color: rgba(40, 200, 245, 0.8);
+  }
+  100% {
+    color: white;
+  }
+}
+
+body.page-front main .wp-block-group:nth-child(2) .wp-block-group__inner-container {
+  display: grid;
+  grid-template-rows: repeat(3, 1fr);
+  height: 100vh;
+}
+
+body.page-front main .wp-block-group:nth-child(2) .wp-block-group__inner-container .wp-block-cover {
+  padding: 0;
+  min-height: initial;
+  height: calc(100vh / 3);
+}
+
+body.page-front main .wp-block-group:nth-child(2) .wp-block-group__inner-container .wp-block-cover img {
+  height: 100%;
+}
+
+body.page-front main .wp-block-group:nth-child(2) .wp-block-group__inner-container .wp-block-cover .wp-block-cover__inner-container {
+  width: 100%;
+  height: 100%;
+  transition: all 0.5s linear;
+}
+
+body.page-front main .wp-block-group:nth-child(2) .wp-block-group__inner-container .wp-block-cover .wp-block-cover__inner-container p {
+  height: 100%;
+  margin: 0;
+}
+
+body.page-front main .wp-block-group:nth-child(2) .wp-block-group__inner-container .wp-block-cover .wp-block-cover__inner-container p a {
+  display: block;
+  color: white;
+  font-family: "Kalam", cursive;
+  margin: 0;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 0;
+  transition: all 0.5s linear;
+}
+
+body.page-front main .wp-block-group:nth-child(2) .wp-block-group__inner-container .wp-block-cover .wp-block-cover__inner-container:hover {
+  background-color: rgba(40, 200, 245, 0.8);
+}
+
+body.page-front main .wp-block-group:nth-child(2) .wp-block-group__inner-container .wp-block-cover .wp-block-cover__inner-container a:hover {
+  font-size: 40px;
+}
+
+@media screen and (min-width: 700px) {
+  body.page-front main .wp-block-group:first-child .wp-block-group__inner-container {
+    height: calc(100vh / 3);
+  }
+  body.page-front main .wp-block-group:nth-child(2) .wp-block-group__inner-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    height: calc(100vh / 3 * 2);
+  }
+  body.page-front main .wp-block-group:nth-child(2) .wp-block-group__inner-container .wp-block-cover:first-child {
+    grid-column: span 2;
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  body.page-front main {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+  body.page-front main .wp-block-group:first-child .wp-block-group__inner-container h1 {
+    font-size: 50px;
+  }
+  body.page-front main .wp-block-group:nth-child(2) .wp-block-group__inner-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(3, 1fr);
+    height: 100vh;
+  }
+  body.page-front main .wp-block-group:nth-child(2) .wp-block-group__inner-container .wp-block-cover {
+    height: 100%;
+  }
+  body.page-front main .wp-block-group:nth-child(2) .wp-block-group__inner-container .wp-block-cover:first-child {
+    grid-column: span 1;
+  }
+  body.page-front main .wp-block-group:nth-child(2) .wp-block-group__inner-container .has-text-align-center p a:hover {
+    font-size: 50px;
+  }
+}
+
+@media screen and (min-width: 1400px) {
+  body.page-front main .wp-block-group:nth-child(2) .wp-block-group__inner-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+  }
+  body.page-front main .wp-block-group:nth-child(2) .wp-block-group__inner-container .wp-block-cover {
+    height: calc(100vh / 2);
+  }
+  body.page-front main .wp-block-group:nth-child(2) .wp-block-group__inner-container .wp-block-cover:first-child {
+    grid-column: span 2;
+  }
+}
+
+/* 11. About Page ================================= */
+body.page-about {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: black;
+}
+
+body.page-about main {
+  padding: 1rem 2rem;
+}
+
+body.page-about main p {
+  color: white;
+}
+
+body.page-about main .wp-block-group {
+  margin: 5rem 0;
+}
+
+body.page-about main .wp-block-group:nth-of-type(4) .wp-block-group__inner-container .wp-block-group {
+  margin: 0;
+}
+
+body.page-about main p::before {
+  font-family: "Font Awesome 5 Free";
+  display: inline-block;
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  margin-right: 0.5rem;
+  color: rgba(40, 200, 245, 0.8);
+}
+
+body.page-about main .wp-block-group:nth-of-type(2) p:first-of-type::before,
+body.page-about main .wp-block-group:nth-of-type(3) p:first-of-type::before,
+body.page-about main .wp-block-group:nth-of-type(4) .wp-block-group:first-of-type p:first-of-type::before {
+  content: "\f017";
+}
+
+body.page-about main .wp-block-group:nth-of-type(2) p:nth-of-type(2)::before,
+body.page-about main .wp-block-group:nth-of-type(3) p:nth-of-type(2)::before,
+body.page-about main .wp-block-group:nth-of-type(4) .wp-block-group:first-of-type p:nth-of-type(2)::before {
+  content: "\f1ad";
+}
+
+body.page-about main .wp-block-group:nth-of-type(2) p:nth-of-type(3)::before,
+body.page-about main .wp-block-group:nth-of-type(2) p:nth-of-type(4)::before,
+body.page-about main .wp-block-group:nth-of-type(3) p:nth-of-type(3)::before,
+body.page-about main .wp-block-group:nth-of-type(3) p:nth-of-type(4)::before,
+body.page-about main .wp-block-group:nth-of-type(4) .wp-block-group:first-of-type p:nth-of-type(3)::before,
+body.page-about main .wp-block-group:nth-of-type(4) .wp-block-group:first-of-type p:nth-of-type(4)::before {
+  content: "\f14a";
+}
+
+body.page-about main .wp-block-group:nth-of-type(4) .wp-block-group__inner-container .wp-block-group {
+  padding: 0.5rem 0;
+  border-bottom: 1px dashed gray;
+}
+
+body.page-about main .wp-block-group:nth-of-type(4) .wp-block-group__inner-container .wp-block-group:first-of-type {
+  padding-top: 0;
+}
+
+@media screen and (min-width: 700px) {
+  body.page-about main {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  body.page-about main {
+    max-width: 900px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 3rem;
+  }
+  body.page-about main .wp-block-group {
+    margin: 0;
+  }
+  body.page-about main .wp-block-group:first-of-type {
+    grid-column: span 2;
+  }
+}
+
+/* 12. Featured Page ================================= */
+body.page-featured {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: black;
+}
+
+/* 13. Single Page ================================= */
+body.single {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: black;
+}
+
+body.single header .header-lower {
+  display: none;
+}
+
+body.single main {
+  padding: 2rem;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+body.single main article p, body.single main article figcaption, body.single main article span {
+  color: white;
+}
+
+body.single main article a {
+  word-wrap: break-word;
+}
+
+body.single main article .entry-title {
+  margin-bottom: 3rem;
+  text-align: center;
+  font-size: 30px;
+}
+
+body.single main article .entry-content {
+  margin-bottom: 3rem;
+}
+
+body.single main article .entry-content .wp-block-group {
+  margin: 3rem 0;
+}
+
+body.single main article .entry-content .wp-block-group h3 {
+  font-size: 25px;
+}
+
+body.single main article .entry-content .wp-block-group .wp-block-image {
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+}
+
+body.single main article .entry-category, body.single main article .entry-tag {
+  margin: 0.5rem 0;
+}
+
+body.single main article .fa-folder::before, body.single main article .fa-tag::before {
+  color: rgba(40, 200, 245, 0.8);
+  margin-right: 0.5rem;
+}
+
+body.single main .post-navigation {
+  margin-top: 3rem;
+}
+
+body.single main .post-navigation .nav-links {
+  display: flex;
+  justify-content: space-between;
+}
+
+@media screen and (min-width: 1000px) {
+  body.single main {
+    max-width: 800px;
+  }
+  body.single main article .entry-content {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-column-gap: 2rem;
+  }
+  body.single main article .entry-content .wp-block-group {
+    margin: 0;
+  }
+  body.single main article .entry-content .wp-block-group:first-child,
+  body.single main article .entry-content .wp-block-group:nth-child(2) {
+    grid-column: span 2;
+  }
+  body.single main article .entry-content .wp-block-group:nth-child(2) .wp-block-group__inner-container .wp-block-group .wp-block-group__inner-container {
+    display: grid;
+    grid-template-columns: 40% 56%;
+    grid-column-gap: 2rem;
+    align-items: start;
+  }
+}
+
+@media screen and (min-width: 1400px) {
+  body.single main {
+    max-width: 1200px;
+  }
+}
+
+/* 14. 404 Page ================================= */
+body.error404 {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: black;
+}
+
+body.error404 main h2 {
+  font-size: 25px;
+}
+
+body.error404 main img {
+  width: 60%;
+}
+
+body.error404 footer {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  left: 0;
+}
+
+@media screen and (min-width: 700px) {
+  body.error404 main h2 {
+    font-size: 30px;
+  }
+  body.error404 main img {
+    width: 45%;
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  body.error404 main h2 {
+    font-size: 35px;
+  }
+  body.error404 main img {
+    width: 35%;
+  }
+}
+
+@media screen and (min-width: 1400px) {
+  body.error404 main img {
+    width: 30%;
+  }
+}
+/*# sourceMappingURL=style.css.map */

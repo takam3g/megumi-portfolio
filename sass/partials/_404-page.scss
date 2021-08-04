@@ -1,0 +1,67 @@
+body.error404 {
+    // preset
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: $default-bg;
+
+    main {
+
+        h2 {
+            font-size: $font-heading-small;
+        }
+
+        img {
+            width: 60%;
+        }
+    }
+
+    footer {
+        position: fixed;
+        bottom: 0;
+        right: 0;
+        left: 0;
+    }
+
+
+    @media screen and (min-width: $medium) {
+        
+        main {
+
+            h2 {
+                font-size: $font-heading-medium;
+            }
+    
+            img {
+                width: 45%;
+            }
+        }
+    }
+
+
+    @media screen and (min-width: $large) {
+    
+        main {
+
+            h2 {
+                font-size: $font-heading-large;
+            }
+    
+            img {
+                width: 35%;
+            }
+        }
+    
+    }
+
+    @media screen and (min-width: $x-large) {
+    
+        main {
+    
+            img {
+                width: 30%;
+            }
+        }
+    
+    }
+}
