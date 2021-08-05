@@ -1093,6 +1093,12 @@ body.page-front main .wp-block-group:first-child .wp-block-group__inner-containe
   }
 }
 
+@supports (-webkit-touch-callout: none) {
+  body.page-front main .wp-block-group:first-child .wp-block-group__inner-container {
+    height: -webkit-fill-available;
+  }
+}
+
 body.page-front main .wp-block-group:nth-child(2) .wp-block-group__inner-container {
   display: grid;
   grid-template-rows: repeat(3, 1fr);

@@ -63,6 +63,13 @@ body.page-front {
                 }
             }
 
+            //to make 100vh work in iOS
+            @supports (-webkit-touch-callout: none) {
+                .wp-block-group__inner-container {
+                    // for sufari
+                    height: -webkit-fill-available;
+                }
+            }
         }
 
         
