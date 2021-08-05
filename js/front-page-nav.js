@@ -4,9 +4,10 @@
 function isMobile() {
     if (navigator.userAgent.match(/iPhone|iPad|Android.+Mobile/)) {
       return true;
-      
-    } else if (navigator.userAgent.toLowerCase().indexOf('ipad') > -1 && 'ontouchend' in document){ 
 
+    } else if (navigator.userAgent.toLowerCase().indexOf('ipad') > -1 && 'ontouchend' in document){ 
+      return true;
+      
     }else {
       return false;
     }
