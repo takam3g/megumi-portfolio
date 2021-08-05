@@ -403,6 +403,11 @@ a:hover {
   color: gray;
 }
 
+h1 a:hover, h2 a:hover, h3 a:hover {
+  animation: color-change 1s linear;
+  animation-iteration-count: infinite;
+}
+
 nav ul {
   margin: 0;
   padding: 0;
@@ -825,6 +830,10 @@ img {
   font-size: 18px;
   color: black;
   background-color: white;
+}
+
+.site-header .header-lower .searchform input:last-child:hover {
+  cursor: pointer;
 }
 
 @media screen and (min-width: 700px) {

@@ -7,6 +7,10 @@ a:hover {
     color: $text-hover;
 }
 
+h1 a:hover, h2 a:hover, h3 a:hover {
+    animation: color-change 1s linear;
+    animation-iteration-count: infinite;
+}
 
 nav {
 
