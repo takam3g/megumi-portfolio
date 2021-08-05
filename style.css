@@ -824,6 +824,7 @@ img {
   border-radius: 5rem;
   font-size: 18px;
   color: black;
+  background-color: white;
 }
 
 @media screen and (min-width: 700px) {
