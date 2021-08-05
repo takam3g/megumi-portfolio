@@ -1,4 +1,4 @@
-console.log("connected navigation.js");
+// console.log("connected navigation.js");
 
 
 // Click event for main menu in mobile view
