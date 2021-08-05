@@ -2,9 +2,12 @@
 
 //Device Judge
 function isMobile() {
-    if (navigator.userAgent.match(/iPhone|iPad|Android.+Mobile/||/iPad|Android/ && 'ontouchend' in document)) {
+    if (navigator.userAgent.match(/iPhone|iPad|Android.+Mobile/)) {
       return true;
-    } else {
+      
+    } else if (navigator.userAgent.toLowerCase().indexOf('ipad') > -1 && 'ontouchend' in document){ 
+
+    }else {
       return false;
     }
 }
