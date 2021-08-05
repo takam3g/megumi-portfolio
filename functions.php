@@ -43,7 +43,13 @@ function megumiportfolio_scripts_styles(){
    wp_enqueue_style('megumiportfolio_style_googlefonts', 'https://fonts.googleapis.com/css2?family=Kalam&display=swap', array(), null);
    wp_enqueue_style('megumiportfolio_style_font_awesome', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css');
 
+   if ( is_page('Front') ): 
+      wp_enqueue_script('megumiportfolio_script_navigation_js', get_template_directory_uri() . '/js/front-page-nav.js', array(), null, true);
+      
+   else:   
    wp_enqueue_script('megumiportfolio_script_navigation_js', get_template_directory_uri() . '/js/navigation.js', array(), null, true);
+   
+   endif;
 }
   
 add_action('wp_enqueue_scripts', 'megumiportfolio_scripts_styles');
