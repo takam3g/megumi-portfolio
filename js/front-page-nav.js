@@ -2,7 +2,7 @@ console.log("connected front-page-nav.js");
 
 
 function isMobile() {
-    if (navigator.userAgent.match(/iPhone|iPad|Android.+Mobile/)||window.ontouchstart !== 'undefined') {
+    if (navigator.userAgent.match(/iPhone|iPad|Android.+Mobile/)) {
       return true;
     } else {
       return false;
