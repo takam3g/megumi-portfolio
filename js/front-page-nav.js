@@ -2,7 +2,7 @@
 
 //Device Judge
 function isMobile() {
-    if (navigator.userAgent.match(/iPhone|iPad|Android.+Mobile/)) {
+    if (navigator.userAgent.match(/iPhone|iPad|Android/ && 'ontouchend' in document)) {
       return true;
     } else {
       return false;
