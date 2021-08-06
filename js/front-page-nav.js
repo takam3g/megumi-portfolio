@@ -2,13 +2,15 @@
 
 //Device Judge
 function isMobile() {
-  if (navigator.userAgent.match(/iPhone|iPad|Android.+Mobile/)) {
+  if (navigator.userAgent.match(/iPhone|iPad|Android/)) {
     return true;
+
+  } else if (navigator.userAgent.match(/Webkit/)){
 
   } else if (navigator.maxTouchPoints > 0){ 
     return true;
     
-  }else {
+  } else {
     return false;
   }
 }
