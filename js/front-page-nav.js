@@ -6,7 +6,8 @@ function isMobile() {
     return true;
 
   } else if (navigator.userAgent.match(/Webkit/)){
-
+    return true;
+    
   } else if (navigator.maxTouchPoints > 0){ 
     return true;
     
