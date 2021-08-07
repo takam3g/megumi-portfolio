@@ -70,6 +70,9 @@ body.single {
         }
 
 
+        /********************************/
+        /* Large Screen (2 columns) */
+        /********************************/
         @media screen and (min-width: $large){
 
             max-width: 800px;
@@ -98,6 +101,10 @@ body.single {
             }
         }
 
+
+        /********************************/
+        /* Large Screen (Still 2 columns, but bigget) */
+        /********************************/
         @media screen and (min-width: $x-large){
 
             max-width: 1200px;

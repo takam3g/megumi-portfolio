@@ -22,7 +22,7 @@ const menus = document.querySelectorAll("body.page-front main .wp-block-group:nt
 // console.log(menus);
 
 
-// if mobile, show the menu text when the page loads
+// if mobile, show the menu text when the page loads (font-size up)
 if(isMobile()){
     window.addEventListener("load", ()=> {
         for(i=0; i<menus.length; i++){

@@ -12,14 +12,17 @@ body.page-about {
             color: $default-color;
         }
 
+        //Each block
         .wp-block-group {
             margin: 5rem 0;
         }
 
+        //Insiide Education
         .wp-block-group:nth-of-type(4) .wp-block-group__inner-container .wp-block-group {
             margin: 0;
         }
 
+        //Icons
         p::before {
             font-family: "Font Awesome 5 Free";
             display: inline-block;
@@ -53,17 +56,24 @@ body.page-about {
             border-bottom: 1px dashed $text-hover;
         }
 
+        //1st item in Education
         .wp-block-group:nth-of-type(4) .wp-block-group__inner-container .wp-block-group:first-of-type {
             padding-top: 0;
         }
 
 
+        /********************************/
+        /* Medium Screen */
+        /********************************/
         @media screen and (min-width: $medium) {
             max-width: 600px;
             margin: 0 auto;
         }
 
 
+        /********************************/
+        /* Large Screen and up */
+        /********************************/
         @media screen and (min-width: $large) {
             max-width: 900px;
             display: grid;

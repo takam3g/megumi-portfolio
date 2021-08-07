@@ -1,16 +1,16 @@
-
+//For search page heading
 .search_archive_heading {
     text-align: center;
     margin: 2em 0;
 }
 
-
+//For 404 page
 .error-404 {
     text-align: center;
     padding: 2em 0;
 }
 
-
+//For search and 404 page 
 .search .error-404 {
     @media screen and (min-width: $medium){
         grid-column: 2 span;

@@ -45,7 +45,7 @@
             }
         }
 
-        
+        //Hambarger menu in small screen
         .main-menu-wrapper {
             @include flexCenter(row);
             justify-self: end;
@@ -128,6 +128,7 @@
         }
     }
 
+    //Slide-in menu (when opened)
     .main-menu-slide {
         list-style: none;
         padding: 0;
@@ -173,7 +174,7 @@
         }
     }
 
-
+    //Slide-in menu (when closed) - switching controled by JS
     .main-menu-slide.close {
         li {
             height: 0;
@@ -184,6 +185,7 @@
         }
     }
 
+    //Category Menu and search bar
     .header-lower {
         margin: 1rem 0;
         @include flexCenter(column);
@@ -231,7 +233,9 @@
     }
 
 
-    // Media Query
+    /********************************/
+    /* Medium Screen (Menu in icons) */
+    /********************************/
     @media screen and (min-width: $medium){
 
         .header-upper {
@@ -262,6 +266,9 @@
         
     }
 
+    /********************************/
+    /* Large Screen and up (Menu in letters) */
+    /********************************/
     @media screen and (min-width: $large){
         .header-upper {
 

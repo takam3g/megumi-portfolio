@@ -19,7 +19,7 @@ body.page-front {
 
             .wp-block-group__inner-container {
                 @include flexCenter(column);
-                height: 100vh;
+                height: 100vh;  //In small screen, name and glasses takes 100vh
 
                 h1 {
                     font-size: 40px;
@@ -36,6 +36,7 @@ body.page-front {
                     }
                 }
 
+                //Animation for blinking blue and white
                 @keyframes color-change {
                     0% {
                         color: $default-color;
@@ -77,8 +78,9 @@ body.page-front {
         .wp-block-group:nth-child(2) .wp-block-group__inner-container {
             display: grid;
             grid-template-rows: repeat(3, 1fr);
-            height: 100vh;
+            height: 100vh;  //In small screen, 3 menus fits in 100vh
 
+            //each menu
             .wp-block-cover {
                 padding: 0;
                 min-height: initial;
@@ -97,6 +99,7 @@ body.page-front {
                         height: 100%;
                         margin: 0;
 
+                        //Not showing Menu text but image only in laptop as default (Showing in Mobile/Tablet when it's loaded controled in JS 
                         a {
                             display: block;
                             color: $default-color;
@@ -104,16 +107,17 @@ body.page-front {
                             margin: 0;
                             height: 100%;
                             @include flexCenter(column);
-                            font-size: 0;
+                            font-size: 0;   
                             transition: all 0.5s linear;
                         }
                     }
                 }
 
+                //And on hover, it will overlay with the color blue
                 .wp-block-cover__inner-container:hover {
                     background-color: $accent-blue;
                 }
-
+                //And show the Menu text
                 .wp-block-cover__inner-container a:hover {
                     font-size: 40px;
 
@@ -125,7 +129,7 @@ body.page-front {
 
 
         /********************************/
-        /* Medium Screen */
+        /* Medium Screen (All in 100vh, 1.name and glasses 2.Work 3. Featured and About) */
         /********************************/
         @media screen and (min-width: $medium) {
             .wp-block-group:first-child .wp-block-group__inner-container {
@@ -143,7 +147,7 @@ body.page-front {
         }
 
         /********************************/
-        /* Large Screen */
+        /* Large Screen (Name and glasses on left side, and 3 menus on right side in 100vh) */
         /********************************/
         @media screen and (min-width: $large) {
             @include flexCenter(row);
@@ -171,7 +175,7 @@ body.page-front {
         }
 
         /********************************/
-        /* X-Large Screen */
+        /* X-Large Screen (Work takes whole right side, Featured and About in 1 row) */
         /********************************/
         @media screen and (min-width: $x-large) {
             .wp-block-group:nth-child(2) .wp-block-group__inner-container {

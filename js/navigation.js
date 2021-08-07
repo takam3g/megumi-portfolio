@@ -1,7 +1,7 @@
 // console.log("connected navigation.js");
 
 
-// Click event for main menu in mobile view
+// Click event for main menu in small screen
 const mainMenuSlideBtn = document.getElementById("mainMenuSlideBtn");
 const mainMenuSlide = document.querySelector(".main-menu-slide");
 

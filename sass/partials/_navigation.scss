@@ -7,6 +7,7 @@ a:hover {
     color: $text-hover;
 }
 
+//Reusing keyframes in front-page for headings
 h1 a:hover, h2 a:hover, h3 a:hover {
     animation: color-change 1s linear;
     animation-iteration-count: infinite;

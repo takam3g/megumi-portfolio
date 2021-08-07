@@ -8,7 +8,7 @@ body.page-featured {
     box-sizing: border-box;
     background-color: $default-bg;
 
-    //main setup
+    //main setup (1 column in small screen)
     main {
         padding: 1rem;
         margin: 0 auto;
@@ -59,7 +59,9 @@ body.page-featured {
 
 
 
-        // Media Query
+        /********************************/
+        /* Medium Screen (2 columns) */
+        /********************************/
         @media screen and (min-width: $medium){
             grid-template-columns: repeat(2, 1fr);
             grid-column-gap: 1rem;
@@ -69,6 +71,9 @@ body.page-featured {
             }
         }
 
+        /********************************/
+        /* Large Screen (3 columns) */
+        /********************************/
         @media screen and (min-width: $large){
             grid-template-columns: repeat(3, 1fr);
 
@@ -78,6 +83,9 @@ body.page-featured {
             
         }
 
+        /********************************/
+        /* Large Screen (4 columns) */
+        /********************************/
         @media screen and (min-width: $x-large){
             grid-template-columns: repeat(4, 1fr);
 
@@ -90,6 +98,7 @@ body.page-featured {
 
 }
 
+//For featured page special setup (as it has only 3 items)
 body.page-featured main {
     
     margin: 3rem 0;
@@ -101,7 +110,7 @@ body.page-featured main {
     
 }
 
-
+//For archive and search page heading to centered
 body.archive,
 body.search {
     h2.search-archive-title {

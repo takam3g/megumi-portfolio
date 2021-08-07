@@ -9,11 +9,11 @@
 </head>
 
 <?php if ( is_page('Front') ): ?>
-
+    <!-- Front page without header -->
     <body <?php body_class(); ?>>
 
 <?php else : ?>
-
+    <!-- Other pages with header -->
     <body <?php body_class(); ?>>
         
         <!-- <div class="page" id="page"> -->
@@ -53,7 +53,7 @@
                     )); 
                 ?>
 
-                
+                <!-- Featured and About pages without Category Menu and Search -->
                 <?php if ( !is_page('About') && !is_page('Featured') ): ?>
                     <div class="header-lower">
 

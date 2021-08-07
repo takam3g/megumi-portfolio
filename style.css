@@ -25,10 +25,9 @@ Table of Contents
 8. Footer
 9. Other Elements
 10. Front Page
-11. Featured Page
-12. About Page
-13. Single Page
-14. 404 Page
+11. About Page
+12. Single Page
+13. 404 Page
 */
 /* 0. Variables ============================== */
 /* This is setting flex vertically and holizontally centered. Using this set of code several times. And it's something I might often use in other pages as well. Passing direction as argument, so I can use it for both of column case and row case */
@@ -434,6 +433,15 @@ body.page-featured main {
   display: grid;
   grid-template-columns: 1fr;
   grid-row-gap: 1rem;
+  /********************************/
+  /* Medium Screen (2 columns) */
+  /********************************/
+  /********************************/
+  /* Large Screen (3 columns) */
+  /********************************/
+  /********************************/
+  /* Large Screen (4 columns) */
+  /********************************/
 }
 
 body.blog main article,
@@ -617,6 +625,12 @@ img {
   z-index: 100;
   display: flex;
   flex-direction: column;
+  /********************************/
+  /* Medium Screen (Menu in icons) */
+  /********************************/
+  /********************************/
+  /* Large Screen and up (Menu in letters) */
+  /********************************/
 }
 
 .site-header .header-upper {
@@ -914,6 +928,12 @@ body.page-about .site-header .main-menu li:last-child a::before {
   justify-content: space-between;
   padding: 1rem 0;
   margin: 0 auto;
+  /********************************/
+  /* Medium & Large Screen (attribute left, sns right (sns in 2 lines)) */
+  /********************************/
+  /********************************/
+  /* X-large Screen (Make sns in 1 line) */
+  /********************************/
 }
 
 .site-footer .footer-wrapper ul {
@@ -1035,13 +1055,13 @@ body.page-front main {
   align-items: center;
   width: 100%;
   /********************************/
-  /* Medium Screen */
+  /* Medium Screen (All in 100vh, 1.name and glasses 2.Work 3. Featured and About) */
   /********************************/
   /********************************/
-  /* Large Screen */
+  /* Large Screen (Name and glasses on left side, and 3 menus on right side in 100vh) */
   /********************************/
   /********************************/
-  /* X-Large Screen */
+  /* X-Large Screen (Work takes whole right side, Featured and About in 1 row) */
   /********************************/
 }
 
@@ -1214,6 +1234,12 @@ body.page-about {
 
 body.page-about main {
   padding: 1rem 2rem;
+  /********************************/
+  /* Medium Screen */
+  /********************************/
+  /********************************/
+  /* Large Screen and up */
+  /********************************/
 }
 
 body.page-about main p {
@@ -1291,15 +1317,7 @@ body.page-about main .wp-block-group:nth-of-type(4) .wp-block-group__inner-conta
   }
 }
 
-/* 12. Featured Page ================================= */
-body.page-featured {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  background-color: black;
-}
-
-/* 13. Single Page ================================= */
+/* 12. Single Page ================================= */
 body.single {
   margin: 0;
   padding: 0;
@@ -1315,6 +1333,12 @@ body.single main {
   padding: 2rem;
   max-width: 600px;
   margin: 0 auto;
+  /********************************/
+  /* Large Screen (2 columns) */
+  /********************************/
+  /********************************/
+  /* Large Screen (Still 2 columns, but bigget) */
+  /********************************/
 }
 
 body.single main article p, body.single main article figcaption, body.single main article span {
@@ -1397,12 +1421,21 @@ body.single main .post-navigation .nav-links {
   }
 }
 
-/* 14. 404 Page ================================= */
+/* 13. 404 Page ================================= */
 body.error404 {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   background-color: black;
+  /********************************/
+  /* Medium Screen */
+  /********************************/
+  /********************************/
+  /* Large Screen */
+  /********************************/
+  /********************************/
+  /* X-Large Screen */
+  /********************************/
 }
 
 body.error404 main h2 {

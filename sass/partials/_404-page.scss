@@ -16,6 +16,7 @@ body.error404 {
         }
     }
 
+    //fixed to the bottom
     footer {
         position: fixed;
         bottom: 0;
@@ -24,6 +25,9 @@ body.error404 {
     }
 
 
+    /********************************/
+    /* Medium Screen */
+    /********************************/
     @media screen and (min-width: $medium) {
         
         main {
@@ -38,7 +42,9 @@ body.error404 {
         }
     }
 
-
+    /********************************/
+    /* Large Screen */
+    /********************************/
     @media screen and (min-width: $large) {
     
         main {
@@ -54,6 +60,9 @@ body.error404 {
     
     }
 
+    /********************************/
+    /* X-Large Screen */
+    /********************************/
     @media screen and (min-width: $x-large) {
     
         main {
