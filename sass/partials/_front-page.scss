@@ -140,6 +140,10 @@ body.page-front {
         @media screen and (min-width: $medium) {
             .wp-block-group:first-child .wp-block-group__inner-container {
                 height: calc(100vh / 3);
+
+                .wp-block-image {
+                    width: 30%;
+                }
             }
 
             .wp-block-group:nth-child(2) .wp-block-group__inner-container {
@@ -158,8 +162,14 @@ body.page-front {
         @media screen and (min-width: $large) {
             @include flexCenter(row);
 
-            .wp-block-group:first-child .wp-block-group__inner-container h1 {
-                font-size: 50px; 
+            .wp-block-group:first-child .wp-block-group__inner-container {
+                h1 {
+                    font-size: 50px;
+                }
+                
+                .wp-block-image {
+                    width: 40%;
+                }
             }
 
             .wp-block-group:nth-child(2) .wp-block-group__inner-container {
