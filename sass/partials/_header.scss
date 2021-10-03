@@ -192,16 +192,18 @@
 
         .category-menu {
             display: flex;
-            justify-content: space-between;
+            flex-wrap: wrap;
+            justify-content: center;
 
             li {
-                margin: 0 0.5rem;
+                margin: 0.5rem;
                 border: 1px solid $default-color;
                 padding: 0.2rem 1rem;
                 border-radius: 5rem;
 
                 a {
                     color: $default-color;
+                    font-size: smaller;
                 }
             }
 
@@ -224,6 +226,7 @@
                 font-size: $font-default-small;
                 color: $default-bg;
                 background-color: $default-color;
+                font-size: smaller;
             }
 
             input:last-child:hover {
@@ -262,6 +265,10 @@
 
         .header-lower {
             flex-direction: row;
+            .category-menu {
+                flex-wrap: nowrap;
+                justify-content: space-between;
+            }
         }
         
     }

@@ -25,6 +25,12 @@ body.page-front {
                     font-size: 40px;
                     animation: color-change 1s linear;
                     animation-iteration-count: infinite;
+                    margin-bottom: 0;
+                }
+
+                p {
+                    font-family: $font_headings;
+                    margin: 0.5em auto 2em auto;
                 }
         
                 .wp-block-image {
