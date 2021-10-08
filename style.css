@@ -1432,7 +1432,7 @@ body.single main .post-navigation .nav-links {
   }
   body.single main article .entry-content .wp-block-group:nth-child(2) .wp-block-group__inner-container .wp-block-group .wp-block-group__inner-container {
     display: grid;
-    grid-template-columns: 40% 56%;
+    grid-template-columns: 48% 48%;
     grid-column-gap: 2rem;
     align-items: start;
   }
