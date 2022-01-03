@@ -6,7 +6,7 @@
 $featured_query = new WP_Query(
   array(
     'tag'             => 'featured',
-    'posts_per_page'  => '3',
+    'posts_per_page'  => '4',
     'orderby'         => 'rand'
   )
 );
