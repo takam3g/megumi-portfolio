@@ -99,16 +99,16 @@ body.page-featured {
 }
 
 //For featured page special setup (as it has only 3 items)
-body.page-featured main {
+// body.page-featured main {
     
-    margin: 3rem 0;
+//     margin: 3rem 0;
 
-    @media screen and (min-width: $x-large){
-        grid-template-columns: repeat(3, 1fr);
-        justify-content: center;
-    }
+//     @media screen and (min-width: $x-large){
+//         grid-template-columns: repeat(3, 1fr);
+//         justify-content: center;
+//     }
     
-}
+// }
 
 //For archive and search page heading to centered
 body.archive,
