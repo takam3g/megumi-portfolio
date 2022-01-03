@@ -555,17 +555,6 @@ body.page-featured main .posts-navigation .nav-links a {
   }
 }
 
-body.page-featured main {
-  margin: 3rem 0;
-}
-
-@media screen and (min-width: 1400px) {
-  body.page-featured main {
-    grid-template-columns: repeat(3, 1fr);
-    justify-content: center;
-  }
-}
-
 body.archive h2.search-archive-title,
 body.search h2.search-archive-title {
   text-align: center;
