@@ -11,7 +11,6 @@ $featured_query = new WP_Query(
   )
 );
 
-
   if ( $featured_query -> have_posts() ):
     while ( $featured_query -> have_posts() ):
       $featured_query -> the_post();
